@@ -172,7 +172,7 @@ io.on("connection", (socket) => {
 
 // ====== Routes (unchanged from your file) ======
 app.get("/", (req, res) => {
-  res.send("Welcome to the abrar test User Sync !");
+  res.send("Welcome to the kashif test User Sync !");
 });
 app.post("/api/profile/:walletAddress", Function.ProfileCreation);
 app.post("/profile-upgradation", Function.UpdateProfile);
