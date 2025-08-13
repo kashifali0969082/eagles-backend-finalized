@@ -29,18 +29,36 @@ const ALLOWED_ORIGINS = Array.from(
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://reffaralmoney.com",
+    "https://www.theeagles.io",
     ...CLIENT_ORIGINS,
   ])
 );
 
 // ====== Socket.IO (don’t force transports; let it upgrade) ======
+// const io = new Server(server, {
+//   cors: {
+//     origin: ALLOWED_ORIGINS,
+//     methods: ["GET", "POST"],
+//     credentials: true,
+//   },
+// });
+
+
+
 const io = new Server(server, {
   cors: {
-    origin: ALLOWED_ORIGINS,
+    origin: (origin, callback) => {
+      if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+        callback(null, true); // allow this origin
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
+
 
 // ====== Express Middleware ======
 app.use(bodyParser.json());
