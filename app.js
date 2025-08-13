@@ -1,4 +1,4 @@
-// index.js
+ // index.js
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -28,6 +28,7 @@ const ALLOWED_ORIGINS = Array.from(
   new Set([
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://reffaralmoney.com",
     ...CLIENT_ORIGINS,
   ])
 );
@@ -171,7 +172,7 @@ io.on("connection", (socket) => {
 
 // ====== Routes (unchanged from your file) ======
 app.get("/", (req, res) => {
-  res.send("Welcome to the Blockchain User Sync !");
+  res.send("Welcome to the abrar test User Sync !");
 });
 app.post("/api/profile/:walletAddress", Function.ProfileCreation);
 app.post("/profile-upgradation", Function.UpdateProfile);
