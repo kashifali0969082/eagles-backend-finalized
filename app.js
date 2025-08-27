@@ -24,7 +24,7 @@ async function connectToMongo() {
 // connectToMongo();
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the kashif test User Sync !");
+  res.send("Welcome to the kashif   ruuner test 1 test User Sync !");
 });
 
 server.listen(PORT, () => {
