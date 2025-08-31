@@ -20,6 +20,8 @@
   },
   "scripts": {
     "start": "NODE_ENV=production.env node app.js",
-    "dev": "nodemon node index.js"
+    "dev": "nodemon node index.js",
+    "build": "echo 'No build step required for this Node.js project'"
+
   }
 }
