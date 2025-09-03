@@ -24,7 +24,10 @@ async function connectToMongo() {
 // connectToMongo();
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the kashif runner backen test 1 test User Sync !");
+  res.json({"name":"kashif testCollection",
+    "description":"This is a test collection for demonstration purposes.",
+    "image":"https://picsum.photos/200/300"
+  });
 });
 
 server.listen(PORT, () => {
